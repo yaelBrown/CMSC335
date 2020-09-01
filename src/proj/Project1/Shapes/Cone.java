@@ -1,3 +1,10 @@
+/**
+ * Filename: Cone.java
+ * Author: Yael Brown
+ * Date: 9/1/2020
+ * Brief Purpose of the Program: Java OO Shapes program
+ * demostrating inheritance and polymorphism.
+ */
 package proj.Project1.Shapes;
 
 import proj.Project1.Interfaces.ThreeDimensionalInterface;

@@ -1,3 +1,11 @@
+/**
+ * Filename: Menu.java
+ * Author: Yael Brown
+ * Date: 9/1/2020
+ * Brief Purpose of the Program: Java OO Shapes program
+ * demostrating inheritance and polymorphism.
+ */
+
 package proj.Project1;
 
 import proj.Project1.Shapes.*;
@@ -11,13 +19,20 @@ public class Menu {
     boolean cont = false;
     Scanner scan = new Scanner(System.in);
 
+    /**
+     * Constructor
+     */
     public Menu() {
         this.cont = true;
     }
 
+    /**
+     * Runs the menu and uses the supporting helper methods
+     */
     public void run() {
+        this.greet();
+
         while (this.cont == true) {
-            this.greet();
             this.choices();
 
             int selection = makeSelection();
@@ -111,10 +126,16 @@ public class Menu {
 
     }
 
+    /**
+     * Intro to program
+     */
     public void greet() {
         System.out.println("\n********* Welcome to the Java OO Shapes Program **********\n");
     }
 
+    /**
+     * Exit of the program that prints the date
+     */
     public void exit() {
         DateFormat day = new SimpleDateFormat("MMM dd");
         DateFormat time = new SimpleDateFormat("hh:mm aa");
@@ -122,6 +143,9 @@ public class Menu {
         System.out.println("\nThank you for using the program. Today is " + day.format(d) + " at " + time.format(d));
     }
 
+    /**
+     * Displays menu choices
+     */
     public void choices() {
         System.out.println("Select from the menu below: \n\n" +
                 "\t1.  Construct a Circle\n" +
@@ -137,10 +161,19 @@ public class Menu {
         );
     }
 
+    /**
+     * Takes in input and returns numerical selection
+     * @return
+     */
     public int makeSelection() {
         return scan.nextInt();
     }
 
+    /**
+     * Validates the selection is within the valid size of the menu
+     * @param selection
+     * @return
+     */
     public int checkSelection(int selection) {
         if (selection < 0 || selection > 10) {
             System.out.println("Invalid selection!\nTry again !\n");
@@ -150,6 +183,11 @@ public class Menu {
         return selection;
     }
 
+    /**
+     * Checks if you would like to continue. If no, returns false to variable that the while loop uses
+     * Then breaks out of while loop
+     * @return boolean
+     */
     private boolean checkContinue() {
         System.out.println("\nWould you like to continue? (Y or N)\n");
         String t = scan.next();
