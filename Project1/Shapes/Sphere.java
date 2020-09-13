@@ -1,28 +1,28 @@
 /**
- * Filename: Circle.java
+ * Filename: Sphere.java
  * Author: Yael Brown
  * Date: 9/1/2020
  * Brief Purpose of the Program: Java OO Shapes program
  * demostrating inheritance and polymorphism.
  */
+
 package proj.Project1.Shapes;
 
-import proj.Project1.Interfaces.TwoDimensionalInterface;
+import proj.Project1.Interfaces.ThreeDimensionalInterface;
 
-public class Circle implements TwoDimensionalInterface {
-
-    public Circle(int diameter) {
+public class Sphere implements ThreeDimensionalInterface {
+    public Sphere(int diameter) {
         this.diameter = diameter;
-        this.radius = this.diameter/2;
+        this.radius = diameter / 2;
     }
 
     private int diameter = 0;
     private int radius = 0;
-    private final String TYPE = "Circle";
+    private final String TYPE = "Sphere";
 
     @Override
     public int getArea() {
-        return (int) (2 * Math.PI * Math.pow((double) radius, 2));
+        return (int) (4 * Math.PI * Math.pow((double) radius, 2.0));
     }
 
     @Override

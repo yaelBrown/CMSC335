@@ -5,9 +5,9 @@
  * Brief Purpose of the Program: Java OO Shapes program
  * demostrating inheritance and polymorphism.
  */
-package proj.Project1.Shapes;
+package proj.Project2.Shapes;
 
-import proj.Project1.Interfaces.TwoDimensionalInterface;
+import proj.Project2.Interfaces.TwoDimensionalInterface;
 
 public class Circle implements TwoDimensionalInterface {
 
