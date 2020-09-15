@@ -6,11 +6,13 @@
  * demostrating inheritance and polymorphism.
  */
 
-package proj.Project1.Shapes;
+package proj.Project2.Shapes;
 
-import proj.Project1.Interfaces.TwoDimensionalInterface;
+import proj.Project2.Interfaces.TwoDimensionalInterface;
 
-public class Rectangle implements TwoDimensionalInterface {
+import javax.swing.*;
+
+public class Rectangle extends Shape implements TwoDimensionalInterface {
     public Rectangle(int length, int width) {
         this.length = length;
         this.width = width;
@@ -21,12 +23,23 @@ public class Rectangle implements TwoDimensionalInterface {
     private final String TYPE = "Rectangle";
 
     @Override
+    public String getTYPE() {
+        return TYPE;
+    }
+
+    public ImageIcon getImg() {
+        return img;
+    }
+
+    private final ImageIcon img = new ImageIcon(getClass().getResource("../rectangle.png"));
+
+    @Override
     public int getArea() {
         return length * width;
     }
 
     @Override
     public String toString() {
-        return "a " + TYPE + out;
+        return "a " + TYPE + " with area of " + getArea();
     }
 }

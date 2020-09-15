@@ -6,11 +6,13 @@
  * demostrating inheritance and polymorphism.
  */
 
-package proj.Project1.Shapes;
+package proj.Project2.Shapes;
 
-import proj.Project1.Interfaces.ThreeDimensionalInterface;
+import proj.Project2.Interfaces.ThreeDimensionalInterface;
 
-public class Cylinder implements ThreeDimensionalInterface {
+import javax.swing.*;
+
+public class Cylinder extends Shape implements ThreeDimensionalInterface {
     public Cylinder(int diameter, int height) {
         this.diameter = diameter;
         this.height = height;
@@ -18,9 +20,20 @@ public class Cylinder implements ThreeDimensionalInterface {
     }
 
     private int diameter;
+
     private int height;
     private int radius;
     private final String TYPE = "Cylinder";
+    public ImageIcon getImg() {
+        return img;
+    }
+
+    private final ImageIcon img = new ImageIcon(getClass().getResource("../cylinder.png"));
+
+    @Override
+    public String getTYPE() {
+        return TYPE;
+    }
 
     @Override
     public int getArea() {
@@ -29,6 +42,6 @@ public class Cylinder implements ThreeDimensionalInterface {
 
     @Override
     public String toString() {
-        return "a " + TYPE + out;
+        return "a " + TYPE + " with area of " + getArea();
     }
 }

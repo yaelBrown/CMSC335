@@ -6,7 +6,7 @@
  * demostrating inheritance and polymorphism.
  */
 
-package proj.Project1.Interfaces;
+package proj.Project2.Interfaces;
 
 /**
  * Interface for 3D shapes

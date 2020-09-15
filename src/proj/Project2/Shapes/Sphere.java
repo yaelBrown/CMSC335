@@ -6,11 +6,13 @@
  * demostrating inheritance and polymorphism.
  */
 
-package proj.Project1.Shapes;
+package proj.Project2.Shapes;
 
-import proj.Project1.Interfaces.ThreeDimensionalInterface;
+import proj.Project2.Interfaces.ThreeDimensionalInterface;
 
-public class Sphere implements ThreeDimensionalInterface {
+import javax.swing.*;
+
+public class Sphere extends Shape implements ThreeDimensionalInterface {
     public Sphere(int diameter) {
         this.diameter = diameter;
         this.radius = diameter / 2;
@@ -19,6 +21,7 @@ public class Sphere implements ThreeDimensionalInterface {
     private int diameter = 0;
     private int radius = 0;
     private final String TYPE = "Sphere";
+    private final ImageIcon img = new ImageIcon(getClass().getResource("../sphere.png"));
 
     @Override
     public int getArea() {
@@ -26,7 +29,16 @@ public class Sphere implements ThreeDimensionalInterface {
     }
 
     @Override
+    public String getTYPE() {
+        return TYPE;
+    }
+
+    public ImageIcon getImg() {
+        return img;
+    }
+
+    @Override
     public String toString() {
-        return "a " + TYPE + out;
+        return "a " + TYPE + " with area of " + getArea();
     }
 }

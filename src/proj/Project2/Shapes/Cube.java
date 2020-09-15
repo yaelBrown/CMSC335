@@ -6,11 +6,13 @@
  * demostrating inheritance and polymorphism.
  */
 
-package proj.Project1.Shapes;
+package proj.Project2.Shapes;
 
-import proj.Project1.Interfaces.ThreeDimensionalInterface;
+import proj.Project2.Interfaces.ThreeDimensionalInterface;
 
-public class Cube implements ThreeDimensionalInterface {
+import javax.swing.*;
+
+public class Cube extends Shape implements ThreeDimensionalInterface {
     public Cube(int width, int height, int length) {
         this.width = width;
         this.height = height;
@@ -20,7 +22,19 @@ public class Cube implements ThreeDimensionalInterface {
     private int width;
     private int height;
     private int length;
+
+    @Override
+    public String getTYPE() {
+        return TYPE;
+    }
+
     private final String TYPE = "Cube";
+
+    public ImageIcon getImg() {
+        return img;
+    }
+
+    private final ImageIcon img = new ImageIcon(getClass().getResource("../cube.png"));
 
     @Override
     public int getArea() {
@@ -29,6 +43,6 @@ public class Cube implements ThreeDimensionalInterface {
 
     @Override
     public String toString() {
-        return "a " + TYPE + out;
+        return "a " + TYPE + " with area of " + getArea();
     }
 }

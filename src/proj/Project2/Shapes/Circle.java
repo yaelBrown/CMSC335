@@ -5,11 +5,13 @@
  * Brief Purpose of the Program: Java OO Shapes program
  * demostrating inheritance and polymorphism.
  */
-package proj.Project1.Shapes;
+package proj.Project2.Shapes;
 
-import proj.Project1.Interfaces.TwoDimensionalInterface;
+import proj.Project2.Interfaces.TwoDimensionalInterface;
 
-public class Circle implements TwoDimensionalInterface {
+import javax.swing.*;
+
+public class Circle extends Shape implements TwoDimensionalInterface {
 
     public Circle(int diameter) {
         this.diameter = diameter;
@@ -21,12 +23,23 @@ public class Circle implements TwoDimensionalInterface {
     private final String TYPE = "Circle";
 
     @Override
+    public String getTYPE() {
+        return TYPE;
+    }
+
+    public ImageIcon getImg() {
+        return img;
+    }
+
+    private final ImageIcon img = new ImageIcon(getClass().getResource("../circle.png"));
+
+    @Override
     public int getArea() {
         return (int) (2 * Math.PI * Math.pow((double) radius, 2));
     }
 
     @Override
     public String toString() {
-        return "a " + TYPE + out;
+        return "a " + TYPE + " with area of " + getArea();
     }
 }

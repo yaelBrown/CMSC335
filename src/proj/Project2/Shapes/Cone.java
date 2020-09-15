@@ -5,12 +5,15 @@
  * Brief Purpose of the Program: Java OO Shapes program
  * demostrating inheritance and polymorphism.
  */
-package proj.Project1.Shapes;
+package proj.Project2.Shapes;
 
-import proj.Project1.Interfaces.ThreeDimensionalInterface;
+import proj.Project2.Interfaces.ThreeDimensionalInterface;
 
-public class Cone implements ThreeDimensionalInterface {
+import javax.swing.*;
+
+public class Cone extends Shape implements ThreeDimensionalInterface {
     public Cone(int height, int diameter) {
+
         this.height = height;
         this.diameter = diameter;
         this.radius = this.diameter / 2;
@@ -22,12 +25,23 @@ public class Cone implements ThreeDimensionalInterface {
     private final String TYPE = "Cone";
 
     @Override
+    public String getTYPE() {
+        return TYPE;
+    }
+
+    public ImageIcon getImg() {
+        return img;
+    }
+
+    private final ImageIcon img = new ImageIcon(getClass().getResource("../cone.png"));
+
+    @Override
     public int getArea() {
         return (int) ((int) Math.PI * this.radius * (this.radius + Math.sqrt((Math.pow((double) this.height,2) + Math.pow((double) this.radius, 2)))));
     }
 
     @Override
     public String toString() {
-        return "a " + TYPE + out;
+        return "a " + TYPE + " with area of " + getArea();
     }
 }

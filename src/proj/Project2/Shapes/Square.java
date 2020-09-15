@@ -6,11 +6,13 @@
  * demostrating inheritance and polymorphism.
  */
 
-package proj.Project1.Shapes;
+package proj.Project2.Shapes;
 
-import proj.Project1.Interfaces.TwoDimensionalInterface;
+import proj.Project2.Interfaces.TwoDimensionalInterface;
 
-public class Square implements TwoDimensionalInterface {
+import javax.swing.*;
+
+public class Square extends Shape implements TwoDimensionalInterface {
     public Square(int length, int width) {
         this.length = length;
         this.width = width;
@@ -19,6 +21,16 @@ public class Square implements TwoDimensionalInterface {
     private int length = 0;
     private int width = 0;
     private final String TYPE = "Square";
+    private final ImageIcon img = new ImageIcon(getClass().getResource("../square.png"));
+
+    public ImageIcon getImg() {
+        return img;
+    }
+
+    @Override
+    public String getTYPE() {
+        return TYPE;
+    }
 
     @Override
     public int getArea() {

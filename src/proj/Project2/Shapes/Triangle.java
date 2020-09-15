@@ -5,11 +5,13 @@
  * Brief Purpose of the Program: Java OO Shapes program
  * demostrating inheritance and polymorphism.
  */
-package proj.Project1.Shapes;
+package proj.Project2.Shapes;
 
-import proj.Project1.Interfaces.TwoDimensionalInterface;
+import proj.Project2.Interfaces.TwoDimensionalInterface;
 
-public class Triangle implements TwoDimensionalInterface {
+import javax.swing.*;
+
+public class Triangle extends Shape implements TwoDimensionalInterface {
     public Triangle(int base, int height) {
         this.base = base;
         this.height = height;
@@ -20,12 +22,23 @@ public class Triangle implements TwoDimensionalInterface {
     private final String TYPE = "Triangle";
 
     @Override
+    public String getTYPE() {
+        return TYPE;
+    }
+
+    public ImageIcon getImg() {
+        return img;
+    }
+
+    private final ImageIcon img = new ImageIcon(getClass().getResource("../triangle.png"));
+
+    @Override
     public int getArea() {
         return (this.base * this.height)/2;
     }
 
     @Override
     public String toString() {
-        return "a " + TYPE + out;
+        return "a " + TYPE + " with area of " + getArea();
     }
 }

@@ -6,10 +6,23 @@
  * demostrating inheritance and polymorphism.
  */
 
-package proj.Project1.Shapes;
+package proj.Project2.Shapes;
+
+import javax.swing.*;
 
 public class Shape {
-    public Shape() {}
+    public Shape() { }
+
+    private final ImageIcon img = new ImageIcon();
+    private final String TYPE = "";
+
+    public String getTYPE() {
+        return TYPE;
+    }
+
+    public ImageIcon getImg() {
+        return img;
+    }
 
     @Override
     public String toString() {
