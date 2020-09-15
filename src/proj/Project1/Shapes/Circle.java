@@ -5,7 +5,7 @@
  * Brief Purpose of the Program: Java OO Shapes program
  * demostrating inheritance and polymorphism.
  */
-package proj.Project2.Shapes;
+package proj.Project1.Shapes;
 
 import proj.Project2.Interfaces.TwoDimensionalInterface;
 

@@ -1,3 +1,11 @@
+/**
+ * Filename: GUI.java
+ * Author: Yael Brown
+ * Date: 9/14/2020
+ * Brief Purpose of the Program:  Java Swing GUI that uses event handlers and listeners while expanding
+ * on the project 1 Shape theme.
+ */
+
 package proj.Project2;
 
 import proj.Project2.Shapes.*;
@@ -5,16 +13,12 @@ import proj.Project2.Shapes.Rectangle;
 import proj.Project2.Shapes.Shape;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
 
 public class GUI {
-    // Menu -> Dimensions -> Display
     public GUI() {
         System.out.println("GUI: Creating GUI");
         frame = new JFrame("Shape Visualizer");
@@ -382,12 +386,6 @@ public class GUI {
         return out;
     }
 
-    /**
-     * 0. menu()
-     * 1. dimensions()
-     * 2. displayShape()
-     * @param selection
-     */
     private void changePanel(String selection) {
         System.out.println("GUI: Changing to panel...");
 
@@ -413,26 +411,5 @@ public class GUI {
             default:
                 break;
         }
-
-//        if (this.currentPage.equals("menu")) {
-//            System.out.println("GUI: " + selection + " was selected!");
-//            frame.getContentPane().removeAll();
-//            frame.getContentPane().add(selection(selection));
-//            frame.setVisible(true);
-//        } else if (this.currentPage.equals("selection")) {
-//            System.out.println("GUI: displaying shape...");
-//            frame.getContentPane().removeAll();
-//            frame.getContentPane().add(displayShape(selectedShape));
-//            frame.setVisible(true);
-//        } else {
-//            System.out.println("GUI: Going back to menu...");
-//            frame.getContentPane().removeAll();
-//            frame.getContentPane().add(menu());
-//            frame.setVisible(true);
-//        }
-    }
-
-    public static void main(String[] args) {
-        GUI g = new GUI();
     }
 }

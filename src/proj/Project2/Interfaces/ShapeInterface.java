@@ -1,9 +1,9 @@
 /**
  * Filename: ShapeInterface.java
  * Author: Yael Brown
- * Date: 9/1/2020
- * Brief Purpose of the Program: Java OO Shapes program
- * demostrating inheritance and polymorphism.
+ * Date: 9/14/2020
+ * Brief Purpose of the Program:  Java Swing GUI that uses event handlers and listeners while expanding
+ * on the project 1 Shape theme.
  */
 
 package proj.Project2.Interfaces;
